@@ -1,0 +1,32 @@
+*hexsearch.txt*	For Vim version 7.3	Last change: 2013 Sep 18
+
+Plugin author: Benoit Mortgat
+                                                         *hexsearch*
+This plugin is to be used when you look for a binary hexadecimal pattern in
+a file, and want to use vim.
+
+===============================================================================
+Searching with :HexSearch~
+                                                         *:HexSearch*
+Syntax:
+
+:HexSearch [pattern]
+:HexSearch! [pattern]
+
+The second version will search in reverse.
+[pattern] must consist of only pairs of hexadecimal characters, or dots. A
+single dot stands for any byte, while a pair of hexadecimal characters maps to
+a specific byte value.
+
+Example: :HexSearch 00.00 => will search for two <NUL> characters with one
+inbetween.
+
+These commands will reload the current file (with prompt) if the following
+conditions are not met:
+ * file opened in binary mode
+ * file opened with latin1 encoding
+ * unix line terminators
+
+===============================================================================
+
+vim: readonly noexpandtab ft=help
